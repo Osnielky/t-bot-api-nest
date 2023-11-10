@@ -9,21 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AlertService = void 0;
-const common_1 = require("@nestjs/common");
-const axios_1 = require("@nestjs/axios");
-let AlertService = class AlertService {
-    constructor(httpService) {
-        this.httpService = httpService;
-    }
-    async testAlert(alertData) {
-        console.log(alertData);
-        return 'process alert hitted';
-    }
-};
-exports.AlertService = AlertService;
-exports.AlertService = AlertService = __decorate([
-    (0, common_1.Injectable)(),
-    __metadata("design:paramtypes", [axios_1.HttpService])
-], AlertService);
-//# sourceMappingURL=alert.service.js.map
+exports.AlertDto = void 0;
+const class_validator_1 = require("class-validator");
+class AlertDto {
+}
+exports.AlertDto = AlertDto;
+__decorate([
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], AlertDto.prototype, "ticker", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], AlertDto.prototype, "message", void 0);
+//# sourceMappingURL=alert.dto.js.map

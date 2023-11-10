@@ -15,12 +15,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AlertController = void 0;
 const common_1 = require("@nestjs/common");
 const alert_service_1 = require("./alert.service");
+const alert_dto_1 = require("./dto/alert.dto");
 let AlertController = class AlertController {
     constructor(alertService) {
         this.alertService = alertService;
     }
     async handleAlert(alertData) {
-        return this.alertService.processAlert(alertData);
+        return this.alertService.testAlert(alertData);
     }
 };
 exports.AlertController = AlertController;
@@ -28,7 +29,7 @@ __decorate([
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
+    __metadata("design:paramtypes", [alert_dto_1.AlertDto]),
     __metadata("design:returntype", Promise)
 ], AlertController.prototype, "handleAlert", null);
 exports.AlertController = AlertController = __decorate([
