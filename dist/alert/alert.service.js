@@ -18,7 +18,14 @@ let AlertService = class AlertService {
     }
     async testAlert(alertData) {
         console.log(alertData);
-        return 'process alert hitted';
+        const order = {
+            type: 'BUY',
+            conditionMatch: 75,
+            symbol: 'AAL',
+            orderType: 'LIMIT',
+            orderPrice: 14.5,
+        };
+        return order;
     }
 };
 exports.AlertService = AlertService;

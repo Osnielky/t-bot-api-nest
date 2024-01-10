@@ -19,12 +19,15 @@ let AlertController = class AlertController {
     constructor(alertService) {
         this.alertService = alertService;
     }
-    async handleAlert(alertData) {
-        return this.alertService.testAlert(alertData);
+    async handleAlert(alert) {
+        return this.alertService.testAlert(alert);
     }
     async convertAndSync(data) {
         console.log(data);
         return 'alert received';
+    }
+    getAll() {
+        return 'all alerts are hitting';
     }
 };
 exports.AlertController = AlertController;
@@ -42,6 +45,12 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], AlertController.prototype, "convertAndSync", null);
+__decorate([
+    (0, common_1.Get)(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], AlertController.prototype, "getAll", null);
 exports.AlertController = AlertController = __decorate([
     (0, common_1.Controller)('alert'),
     __metadata("design:paramtypes", [alert_service_1.AlertService])

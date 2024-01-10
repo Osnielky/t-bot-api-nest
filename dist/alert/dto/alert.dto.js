@@ -15,6 +15,10 @@ class AlertDto {
 }
 exports.AlertDto = AlertDto;
 __decorate([
+    (0, class_validator_1.IsOptional)(),
+    __metadata("design:type", String)
+], AlertDto.prototype, "indicator", void 0);
+__decorate([
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
 ], AlertDto.prototype, "ticker", void 0);
