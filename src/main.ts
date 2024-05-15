@@ -9,6 +9,7 @@ async function bootstrap() {
       whitelist: true, // elimina las propiedades extra del cuerpo del request
     }),
   );
-  await app.listen(3000);
+  await app.listen(parseInt(process.env.PORT) || 3000);
 }
 bootstrap();
+ 
