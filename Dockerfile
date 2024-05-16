@@ -36,4 +36,4 @@ CMD ["npm", "run", "start:prod"]
 # CMD ["node", "index.js"]
 
 # Expose port 8080 of your microservice / server.
-EXPOSE 3000
+EXPOSE 8080
