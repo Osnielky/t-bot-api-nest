@@ -1,26 +1,39 @@
-# Base image
-FROM node:18
+# Base image.
+FROM node:18-alpine
 
-# Create app directory
+# Set the Enviournment to production
+ENV NODE_ENV=production
+
+# Create app directory.
 WORKDIR /usr/src/app
 
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# A wildcard is used to copy package.json AND package-lock.json.
 COPY package*.json ./
 
-# Install app dependencies
-RUN npm install
+# Install nestjs which is required for bulding the Nest.js project.
+# (Skip for Node.js Projects)
+RUN npm install -g @nestjs/cli
 
-# Bundle app source
+# Installs only the dependencies and skips devDependencies.
+RUN npm install --omit=dev
+
+# Copy all the files to the container.
 COPY . .
 
-# Copy the .env and .env.development files
-COPY  .env.development ./
-
-# Creates a "dist" folder with the production build
+# Create a "dist" folder with the production build.
+#(Skip for Node.js Projects)
 RUN npm run build
 
-# Expose the port on which the app will run
-EXPOSE 3001
 
-# Start the server using the production build
+# Start the server using the production build for:
+
+# Nest.js:
 CMD ["npm", "run", "start:prod"]
+ 
+ # ___OR___
+
+# Node.js:
+# CMD ["node", "index.js"]
+
+# Expose port 8080 of your microservice / server.
+EXPOSE 3000
