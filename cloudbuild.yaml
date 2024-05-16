@@ -22,4 +22,4 @@ steps:
   - '--allow-unauthenticated'
 
 images:
-- 'gcr.io/$PROJECT_ID/t-bot-api-nest'
+- 'gcr.io/$t-bot-393514/t-bot-api-nest'
