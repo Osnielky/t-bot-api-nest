@@ -1,11 +1,11 @@
 steps:
 # Build the Docker image
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/$t-bot-393514/t-bot-api-nest', '.']
+  args: ['build', '-t', 'gcr.io/t-bot-393514/t-bot-api-nest', '.']
 
 # Push the Docker image to Google Container Registry
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/$t-bot-393514/t-bot-api-nest']
+  args: ['push', 'gcr.io/t-bot-393514/t-bot-api-nest']
 
 # Deploy the Docker image to Cloud Run
 - name: 'gcr.io/cloud-builders/gcloud'
@@ -22,4 +22,4 @@ steps:
   - '--allow-unauthenticated'
 
 images:
-- 'gcr.io/$t-bot-393514/t-bot-api-nest'
+- 'gcr.io/t-bot-393514/t-bot-api-nest'
