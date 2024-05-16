@@ -14,7 +14,7 @@ steps:
   - 'deploy'
   - 't-bot-api-nest'
   - '--image'
-  - 'gcr.io/$t-bot-393514/t-bot-api-nest'
+  - 'gcr.io/t-bot-393514/t-bot-api-nest'
   - '--region'
   - 'us-central1'
   - '--platform'
