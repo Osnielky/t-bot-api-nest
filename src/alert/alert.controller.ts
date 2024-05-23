@@ -19,6 +19,6 @@ export class AlertController {
 
   @Get()
   getAll() {
-    return 'all alerts are hitting';
+    return 'all alerts are hitting en version updated';
   }
 }
