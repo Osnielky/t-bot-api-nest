@@ -27,7 +27,7 @@ let AlertController = class AlertController {
         return 'alert received';
     }
     getAll() {
-        return 'all alerts are hitting';
+        return 'all alerts are hitting en version updated';
     }
 };
 exports.AlertController = AlertController;

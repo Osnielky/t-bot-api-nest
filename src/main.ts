@@ -1,9 +1,9 @@
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
+import { MainModule } from './main.module';
 import { ValidationPipe } from '@nestjs/common';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(MainModule);
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true, // elimina las propiedades extra del cuerpo del request
@@ -12,4 +12,3 @@ async function bootstrap() {
   await app.listen(parseInt(process.env.PORT) || 3000);
 }
 bootstrap();
- 
